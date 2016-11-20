@@ -1,0 +1,6 @@
+<html>
+  <h1>"Hello, Sinatra!"</h1>
+  <% @objects.each do |t| %>
+    <p><img src="<%= t['url']  %>" alt="<%= t['name']  %>" height="<%= t['width'] %>" width="<%= t['height'] %>"/></p>
+  <% end %>
+</html>
