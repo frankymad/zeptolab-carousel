@@ -4,9 +4,13 @@
   <div id="carousel">
     <% @objects.each do |t| %>
         <% if t == @objects.first %>
-          <img class="item show" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
+            <img class="item show" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
+        <% elsif t ==@objects[1] %>
+            <img class="item next" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
+        <% elsif t ==@objects.last %>
+            <img class="item prev" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
         <% else %>
-          <img class="item" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
+            <img class="item" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
         <% end %>
     <% end %>
   </div>
