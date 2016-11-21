@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="css/main.css" type="text/css" />
-<%= "<script src=\"/#{@js}\"></script>" if @js %>
+<link rel="stylesheet" href="css/main.css" type="text/css"/>
+<script src="js/main.js" type="text/javascript"></script>
 <html>
   <div id="carousel">
     <% @objects.each do |t| %>
@@ -10,7 +10,12 @@
         <% end %>
     <% end %>
   </div>
+
   <script>
-    var items = document.querySelectorAll('#carousel .item');
+      var items = document.querySelectorAll('#carousel .item');
+      var carousel = document.getElementById('carousel');
+      carousel.onmouseover = function() {playPause()};
+      carousel.onmouseout = function() {playPause()};
+      carousel.onclick = function () {nextItem()};
   </script>
 </html>

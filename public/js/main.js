@@ -9,3 +9,20 @@ function nextItem() {
     currentItem = (currentItem+1)%items.length;
     items[currentItem].className = 'item show';
 }
+
+var playing = true;
+
+function pauseSlideshow() {
+    playing = false;
+    clearInterval(interval);
+}
+
+function playSlideshow() {
+    playing = true;
+    interval = setInterval(nextItem,2000);
+}
+
+function playPause() {
+    if (playing) {pauseSlideshow();}
+    else {playSlideshow();}
+}

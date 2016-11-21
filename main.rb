@@ -8,7 +8,6 @@ json_object = JSON.parse(open(url).read)
 
 get "/" do
   @objects = json_object
-  @js = "js/main.js"
   erb :index
 end
 
