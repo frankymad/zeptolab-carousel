@@ -1,9 +1,16 @@
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+<%= "<script src=\"/#{@js}\"></script>" if @js %>
 <html>
-  <div class="carouselbox">
-    <ul class="content">
-      <% @objects.each do |t| %>
-        <img src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
-      <% end %>
-    </ul>
+  <div id="carousel">
+    <% @objects.each do |t| %>
+        <% if t == @objects.first %>
+          <img class="item show" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
+        <% else %>
+          <img class="item" src="<%= t['url']  %>" alt="<%= t['name']  %>"/>
+        <% end %>
+    <% end %>
   </div>
+  <script>
+    var items = document.querySelectorAll('#carousel .item');
+  </script>
 </html>
